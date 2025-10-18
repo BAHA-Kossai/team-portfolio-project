@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia Rodriguez | Frontend Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            max-width: 800px;
+            background: white;
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .back-link {
+            color: #f5576c;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        .section {
+            margin: 2rem 0;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .bio {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .skills-container li {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 0.4rem;
+            border-radius: 30px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        .skills-container li:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .github-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        .github-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(245, 87, 108, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <a href="portfolio.html" class="back-link">← Back to Team</a>
+        
+        <div class="header">
+            <h1>Ahlem Toubrinet</h1>
+        </div>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <p class="bio">
+                I'm a third-year student at the National Higher School of Artificial Intelligence (ENSIA) 
+                passionate about technology, problem-solving, and creating impactful digital experiences. 
+                I love designing and developing modern web applications that are both functional and visually appealing. 
+                Through my projects, I’ve explored AI, web development, and UI/UX design — always aiming to combine logic with creativity. 
+                I’m also a proactive team player who enjoys learning from others and contributing to meaningful projects.
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <ul class="skills-container">
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Python</li>
+                <li>C++</li>
+                <li>Figma</li>
+                <li>UI/UX Design</li>
+                <li>Teamwork</li>
+                <li>Creativity</li>
+                <li>Problem Solving</li>
+                <li>Communication</li>
+                <li>Adaptability</li>
+                <li>Leadership</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>GitHub</h2>
+            <a href="https://github.com/AhlemToubrinet" class="github-btn" target="_blank">
+                Visit My GitHub
+            </a>
+        </div>
+    </div>
+</body>
+</html>
