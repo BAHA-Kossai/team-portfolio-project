@@ -2,7 +2,7 @@
 
 ## Team Members:
 
-- (Team Leader) Kosai BAHA **(BAHA-Kossai)**
+- (Team Leader) Kossai BAHA **(BAHA-Kossai)**
 - Abderahim KHEFIF **(Abderahim-14)**
 - Ahlem TOUBRINET **(Ahlem Toubrinet)**
 - Abdelaali HABBECHE **(ali-hbch)**
