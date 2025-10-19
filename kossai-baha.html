@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kossai Baha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+            transition: color 0.3s;
+        }
+
+        .back-link:hover {
+            color: #ee5a52;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .header-section {
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            padding: 3rem;
+            color: white;
+            position: relative;
+        }
+
+        .header-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background: white;
+            clip-path: polygon(0 40%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        .content-section {
+            padding: 3rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: #ff6b6b;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 40px;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #feca57);
+        }
+
+        .bio {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .skills-grid li {
+            background: #f8f9fa;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            border-left: 4px solid #ff6b6b;
+            transition: all 0.3s;
+        }
+
+        .skills-grid li:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .github-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            border-left: 4px solid #feca57;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+            color: white;
+            padding: 1rem 3rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size:1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .github-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-link">← Back to Team</a>
+        
+        <div class="profile-card">
+            <div class="header-section">
+                <h1>Kossai Baha</h1>
+                <p class="subtitle">Ai Student</p>
+            </div>
+
+            <div class="content-section">
+                <div class="section">
+                    <h2>Biography</h2>
+                    <p class="bio">
+                        I’m Kossai Baha, an Artificial Intelligence student with a deep passion for technology, problem-solving, and innovation.
+                        I possess a strong theoretical and mathematical foundation, which allows me to understand complex AI and data science concepts 
+                        and apply them effectively in real-world scenarios. My skill set spans across software development, machine learning, and system design, 
+                        combining technical precision with creativity. I enjoy building efficient, well-structured solutions from backend systems to intelligent 
+                        applications and continuously expanding my knowledge in emerging technologies. I thrive in collaborative environments and aim to contribute 
+                        to impactful projects that bridge AI theory with practical implementation.
+                    </p>
+                </div>
+
+                <div class="section">
+                    <h2>Technical Skills</h2>
+                    <ul class="skills-grid">
+                        <li>C++</li>
+                        <li>Python</li>
+                        <li>React</li>
+                        <li>JavaScript</li>
+                        <li>Scss/css</li>
+                        <li>JAVA</li>
+                        <li>firebase</li>
+                        <li>Node JS</li>
+                        <li>Flutter</li>
+                    </ul>
+                </div>
+
+                <div class="github-section">
+                    <h2>Connect on GitHub</h2>
+                    <a href="https://github.com/BAHA-Kossai" class="github-link" target="_blank">
+                        View GitHub Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
