@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khefif Abderahim portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #1a2332;
+            background-image: 
+                linear-gradient(rgba(52, 152, 219, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(52, 152, 219, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+            min-height: 100vh;
+            padding: 2rem;
+            color: #ecf0f1;
+        }
+
+        .blueprint {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(26, 35, 50, 0.95);
+            border: 2px solid #3498db;
+            padding: 3rem;
+            position: relative;
+        }
+
+        .blueprint::before,
+        .blueprint::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #3498db;
+        }
+
+        .blueprint::before {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+        }
+
+        .blueprint::after {
+            bottom: -2px;
+            right: -2px;
+            border-left: none;
+            border-top: none;
+        }
+
+        .corner-tl,
+        .corner-br {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #3498db;
+        }
+
+        .corner-tl {
+            top: -2px;
+            right: -2px;
+            border-left: none;
+            border-bottom: none;
+        }
+
+        .corner-br {
+            bottom: -2px;
+            left: -2px;
+            border-right: none;
+            border-top: none;
+        }
+
+        .back-link {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+            border: 1px solid #3498db;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: #3498db;
+            color: #1a2332;
+        }
+
+        .header {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #3498db;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .role {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            border-left: 3px solid #3498db;
+            background: rgba(52, 152, 219, 0.05);
+        }
+
+        h2 {
+            color: #3498db;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        h2::before {
+            content: '>';
+            font-size: 1.8rem;
+        }
+
+        .bio {
+            line-height: 1.8;
+            color: #bdc3c7;
+        }
+
+        .skills-blueprint {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .skills-blueprint li {
+            background: rgba(52, 152, 219, 0.1);
+            border: 1px solid #3498db;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .skills-blueprint li::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            width: 8px;
+            height: 8px;
+            background: #3498db;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .skills-blueprint li:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: translateX(5px);
+        }
+
+        .skills-blueprint li:hover::before {
+            opacity: 1;
+        }
+
+        .github-box {
+            border: 2px dashed #3498db;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 1rem;
+            transition: all 0.3s;
+        }
+
+        .github-link:hover {
+            background: #3498db;
+            color: #1a2332;
+        }
+
+        .specs {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            color: #7f8c8d;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="blueprint">
+        <div class="corner-tl"></div>
+        <div class="corner-br"></div>
+        
+        <a href="index.html" class="back-link">← RETURN</a>
+        
+        <div class="header">
+            <h1>Khefif Abderahim</h1>
+            <p class="role">3rd year Ensia student</p>
+        </div>
+
+        <div class="section">
+            <h2>Profile Overview</h2>
+            <p class="bio">
+                I’m Khefif Abderahim, an Artificial Intelligence student at ENSIA, passionate about AI, research, and its transformative applications in the medical field. My interests focus on areas like tumor segmentation and detection, where I’ve already begun exploring research to better understand how AI can contribute to healthcare innovation. With a strong foundation in problem-solving, and critical thinking, combined with years of experience in creative disciplines such as design, UX, and marketing research, I bring both analytical precision and a human-centered perspective to my work.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Technical Specifications</h2>
+            <ul class="skills-blueprint">
+                <li>Python</li>
+                <li>Machine learning</li>
+                <li>SQL</li>
+                <li>Computer vision</li>
+                <li>UI/UX design</li>
+                <li>Graphic design</li>
+                <li>Technical writing</li>
+                <li>Marketing research</li>
+            </ul>
+        </div>
+
+        <div class="github-box">
+            <h2>Source Repository</h2>
+            <a href="https://github.com/Abderahim-14" class="github-link" target="_blank">
+                Access GitHub
+            </a>
+        </div>
+
+        <div class="specs">SPEC-2025-V1.0</div>
+    </div>
+</body>
+</html>
