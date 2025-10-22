@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mezigheche Malak Yasmine | Software Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            right: -50px;
+            animation-delay: 7s;
+        }
+
+        .shape:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            right: 10%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        .glass-card {
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 1;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .back-link {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-5px);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .role {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .helix-icon {
+            --uib-size: 30px;
+            --uib-color: white;
+            --uib-speed: 2.5s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: var(--uib-size);
+            width: var(--uib-size);
+            flex-shrink: 0;
+        }
+
+        .helix-slice {
+            position: relative;
+            height: calc(var(--uib-size) / 6);
+            width: 100%;
+        }
+
+        .helix-slice::before,
+        .helix-slice::after {
+            --uib-a: calc(var(--uib-speed) / -2);
+            --uib-b: calc(var(--uib-speed) / -6);
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(50% - var(--uib-size) / 12);
+            height: 100%;
+            width: calc(100% / 6);
+            border-radius: 50%;
+            background-color: var(--uib-color);
+            flex-shrink: 0;
+            animation: orbit var(--uib-speed) linear infinite;
+            transition: background-color 0.3s ease;
+        }
+
+        .helix-slice:nth-child(1)::after {
+            animation-delay: var(--uib-a);
+        }
+
+        .helix-slice:nth-child(2)::before {
+            animation-delay: var(--uib-b);
+        }
+
+        .helix-slice:nth-child(2)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b));
+        }
+
+        .helix-slice:nth-child(3)::before {
+            animation-delay: calc(var(--uib-b) * 2);
+        }
+        .helix-slice:nth-child(3)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b) * 2);
+        }
+
+        .helix-slice:nth-child(4)::before {
+            animation-delay: calc(var(--uib-b) * 3);
+        }
+        .helix-slice:nth-child(4)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b) * 3);
+        }
+
+        .helix-slice:nth-child(5)::before {
+            animation-delay: calc(var(--uib-b) * 4);
+        }
+        .helix-slice:nth-child(5)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b) * 4);
+        }
+
+        .helix-slice:nth-child(6)::before {
+            animation-delay: calc(var(--uib-b) * 5);
+        }
+        .helix-slice:nth-child(6)::after {
+            animation-delay: calc(var(--uib-a) + var(--uib-b) * 5);
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: translateX(calc(var(--uib-size) * 0.25)) scale(0.73684);
+                opacity: 0.65;
+            }
+            5% {
+                transform: translateX(calc(var(--uib-size) * 0.235)) scale(0.684208);
+                opacity: 0.58;
+            }
+            10% {
+                transform: translateX(calc(var(--uib-size) * 0.182)) scale(0.631576);
+                opacity: 0.51;
+            }
+            15% {
+                transform: translateX(calc(var(--uib-size) * 0.129)) scale(0.578944);
+                opacity: 0.44;
+            }
+            20% {
+                transform: translateX(calc(var(--uib-size) * 0.076)) scale(0.526312);
+                opacity: 0.37;
+            }
+            25% {
+                transform: translateX(0%) scale(0.47368);
+                opacity: 0.3;
+            }
+            30% {
+                transform: translateX(calc(var(--uib-size) * -0.076)) scale(0.526312);
+                opacity: 0.37;
+            }
+            35% {
+                transform: translateX(calc(var(--uib-size) * -0.129)) scale(0.578944);
+                opacity: 0.44;
+            }
+            40% {
+                transform: translateX(calc(var(--uib-size) * -0.182)) scale(0.631576);
+                opacity: 0.51;
+            }
+            45% {
+                transform: translateX(calc(var(--uib-size) * -0.235)) scale(0.684208);
+                opacity: 0.58;
+            }
+            50% {
+                transform: translateX(calc(var(--uib-size) * -0.25)) scale(0.73684);
+                opacity: 0.65;
+            }
+            55% {
+                transform: translateX(calc(var(--uib-size) * -0.235)) scale(0.789472);
+                opacity: 0.72;
+            }
+            60% {
+                transform: translateX(calc(var(--uib-size) * -0.182)) scale(0.842104);
+                opacity: 0.79;
+            }
+            65% {
+                transform: translateX(calc(var(--uib-size) * -0.129)) scale(0.894736);
+                opacity: 0.86;
+            }
+            70% {
+                transform: translateX(calc(var(--uib-size) * -0.076)) scale(0.947368);
+                opacity: 0.93;
+            }
+            75% {
+                transform: translateX(0%) scale(1);
+                opacity: 1;
+            }
+            80% {
+                transform: translateX(calc(var(--uib-size) * 0.076)) scale(0.947368);
+                opacity: 0.93;
+            }
+            85% {
+                transform: translateX(calc(var(--uib-size) * 0.129)) scale(0.894736);
+                opacity: 0.86;
+            }
+            90% {
+                transform: translateX(calc(var(--uib-size) * 0.182)) scale(0.842104);
+                opacity: 0.79;
+            }
+            95% {
+                transform: translateX(calc(var(--uib-size) * 0.235)) scale(0.789472);
+                opacity: 0.72;
+            }
+            100% {
+                transform: translateX(calc(var(--uib-size) * 0.25)) scale(0.73684);
+                opacity: 0.65;
+            }
+        }
+
+        .bio {
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .skills-modern {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+        }
+
+        .skills-modern li {
+            background: rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .skills-modern li:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .github-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .github-link {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 3rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .github-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .glass-card {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="glass-card">
+        <a href="index.html" class="back-link">← Back</a>
+        
+        <div class="profile-header">
+            <div class="avatar">MM</div>
+            <h1>Mezigheche Malak Yasmine</h1>
+            <p class="role">Software Engineer</p>
+        </div>
+
+        <div class="content-section">
+            <h2>
+                <div class="helix-icon">
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                </div>
+                About
+            </h2>
+            <p class="bio">
+              Aspiring software engineer with a strong interest in web and mobile development. 
+              Passionate about building clean, user-focused digital experiences that are both functional and visually engaging. 
+              Brings a detail-oriented mindset and a love for problem-solving to every project, 
+              with a focus on creating responsive, accessible, and efficient applications. 
+              Continuously learning and growing to stay at the forefront of modern development practices.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>
+                <div class="helix-icon">
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                    <div class="helix-slice"></div>
+                </div>
+                Skills
+            </h2>
+            <ul class="skills-modern">
+                <li>React</li>
+                <li>Python</li>
+                <li>C++/C</li>
+                <li>HTML/CSS</li>
+                <li>Dart/Flutter</li>
+                <li>Git</li>
+                <li>Java</li>
+                <li>MySQL</li>
+                <li>Linux/ Bash</li>
+            </ul>
+        </div>
+
+        <div class="github-container">
+            <a href="https://github.com/malakneedshelp" class="github-link" target="_blank">
+                Visit GitHub Profile
+            </a>
+        </div>
+    </div>
+</body>
+</html>
